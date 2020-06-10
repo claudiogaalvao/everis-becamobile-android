@@ -8,7 +8,8 @@ class Filme(private val id: Int,
             private val title: String,
             private val original_title: String,
             private val original_language: String,
-            private val release_date: String, val popularity: Double,
+            private val release_date: String,
+            private val popularity: Double,
             private val vote_count: Int,
             private val vote_average: Double,
             private val adult: Boolean,
@@ -16,7 +17,8 @@ class Filme(private val id: Int,
             private val genre_ids: Array<Int>,
             private val overview: String,
             private val backdrop_path: String,
-            private val poster_path: String) : Serializable {
+            private val poster_path: String,
+            private val media_type: String) : Serializable {
 
     fun getCapa() : String {
         return "https://image.tmdb.org/t/p/w500$poster_path"
