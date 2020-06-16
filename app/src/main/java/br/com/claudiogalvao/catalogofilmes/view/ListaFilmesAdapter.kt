@@ -1,14 +1,12 @@
-package br.com.claudiogalvao.catalogofilmes.ui.adapter
+package br.com.claudiogalvao.catalogofilmes.view
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Toast
 import br.com.claudiogalvao.catalogofilmes.R
-import br.com.claudiogalvao.catalogofilmes.model.Filme
+import br.com.claudiogalvao.catalogofilmes.infrastructure.network.model.Filme
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.filme_item.view.*
 
@@ -17,7 +15,7 @@ interface OnClickListener {
     fun onClick(filme: Filme)
 }
 
-class ListaFilmesAdapter(val context: Context, val filmes: ArrayList<Filme>) : BaseAdapter() {
+class ListaFilmesAdapter(private val context: Context, private val filmes: List<Filme>) : BaseAdapter() {
     var onClickListener: OnClickListener? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
